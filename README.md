@@ -13,7 +13,7 @@ In this project, Python is used to explore data related to bike share systems fo
 1. washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+
 my data science course mentor on udacity.com
 https://www.udacity.com/course/writing-readmes--ud777
 https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment

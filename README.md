@@ -18,3 +18,4 @@ my data science course mentor on udacity.com
 https://www.udacity.com/course/writing-readmes--ud777
 https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment
 https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#viewing-data
+https://stackoverflow.com/questions/52669094/how-do-i-display-data-from-csv-based-on-user-input

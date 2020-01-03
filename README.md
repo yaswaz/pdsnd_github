@@ -1,15 +1,20 @@
 ### Date created
-Include the date you created this project and README file.
+3rd January 2019
 
 ### Project Title
-Replace the Project Title
+Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+In this project, Python is used to explore data related to bike share systems for three major cities in the United States — Chicago, New York City, and Washington. The code imports the data and answers interesting questions about it by computing descriptive statistics. The Python script  takes in raw input to create an interactive experience in the terminal to present these statistics. It also prompts the user to view raw data associated with all the cities
 
 ### Files used
-Include the files used
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+my data science course mentor on udacity.com
+https://www.udacity.com/course/writing-readmes--ud777
+https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment
+https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#viewing-data

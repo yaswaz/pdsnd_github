@@ -8,9 +8,9 @@ Bikeshare Project
 In this project, Python is used to explore data related to bike share systems for three major cities in the United States — Chicago, New York City, and Washington. The code imports the data and answers interesting questions about it by computing descriptive statistics. The Python script  takes in raw input to create an interactive experience in the terminal to present these statistics. It also prompts the user to view raw data associated with all the cities
 
 ### Files used
-chicago.csv
-new_york_city.csv
-washington.csv
+1. chicago.csv
+1. new_york_city.csv
+1. washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.

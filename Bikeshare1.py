@@ -18,37 +18,37 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    city_is_valid = True
-    while city_is_valid:
+    city_is_not_valid = True
+    while city_is_not_valid:
         try:
             city = input('Will you like to see the data for Chicago, New York City or Washington?: ').lower().strip()
             if CITY_DATA[city]:
-                city_is_valid = False
+                city_is_not_valid = False
         except:
             print('City entry is not valid')
 
      # TO DO: get user input for month (all, january, february, ... , june)
-    month_is_valid = True
-    while month_is_valid:
+    month_is_not_valid = True
+    while month_is_not_valid:
         try:
 
             months = {'january': '1', 'february': '2', 'march': '3', 'april': '4', 'may': '5', 'june': '6', 'all': '7'}
             month = input('What Month Will You Like To Filter By (January to June Only)? Type "all" for no month filter: ').lower().strip()
 
             if months[month]:
-                month_is_valid = False
+                month_is_not_valid = False
         except:
             print('Your month input is not valid')
 
  # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    day_is_valid = True
-    while day_is_valid:
+    day_is_not_valid = True
+    while day_is_not_valid:
         try:
             days = {'monday': '1', 'tuesday': '2', 'wednesday': '3', 'thursday': '4', 'friday': '5', 'saturday': '6', 'sunday': '7', 'all':                    '8'}
             day = input('What Day Of The Week Will You Like To Filter By? Type "all" for no filter: ').lower().strip()
 
             if days[day]:
-                day_is_valid = False
+                day_is_not_valid = False
         except:
             print('Your day input is not valid')
 
@@ -188,19 +188,12 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def main():
+def raw_data(df):
+
+            """Prompts user to if they want to see raw data, displays data if the answer is 'yes',
+               and continues the prompts and displays until the user says 'no'"""
+
     while True:
-        city, month, day = get_filters()
-        df = load_data(city, month, day)
-
-        time_stats(df)
-        station_stats(df)
-        trip_duration_stats(df)
-        user_stats(df)
-
-        """Prompts user to if they want to see raw data, displays data if the answer is 'yes',
-           and continues the prompts and displays until the user says 'no'"""
-
         raw_data = input('Would you like to see raw data? Enter yes or no?: ')
         row_start = 0
         row_end = 5
@@ -210,7 +203,6 @@ def main():
             break
         else:
             print('Entry not valid! Please enter Yes or No')
-
         while row_end < 300002:
             raw_data = input('Would you like to see more raw data? Enter yes or no?: ')
             if raw_data.lower() == 'yes':
@@ -221,7 +213,18 @@ def main():
                 break
             else:
                 print('Entry not valid! Please enter Yes or No')
-                continue
+
+def main():
+    while True:
+        city, month, day = get_filters()
+        df = load_data(city, month, day)
+
+        time_stats(df)
+        station_stats(df)
+        trip_duration_stats(df)
+        user_stats(df)
+        raw_data(df)
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
                 break

@@ -188,19 +188,12 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def main():
+def raw_data(df):
+
+            """Prompts user to if they want to see raw data, displays data if the answer is 'yes',
+               and continues the prompts and displays until the user says 'no'"""
+
     while True:
-        city, month, day = get_filters()
-        df = load_data(city, month, day)
-
-        time_stats(df)
-        station_stats(df)
-        trip_duration_stats(df)
-        user_stats(df)
-
-        """Prompts user to if they want to see raw data, displays data if the answer is 'yes',
-           and continues the prompts and displays until the user says 'no'"""
-
         raw_data = input('Would you like to see raw data? Enter yes or no?: ')
         row_start = 0
         row_end = 5
@@ -210,7 +203,6 @@ def main():
             break
         else:
             print('Entry not valid! Please enter Yes or No')
-
         while row_end < 300002:
             raw_data = input('Would you like to see more raw data? Enter yes or no?: ')
             if raw_data.lower() == 'yes':
@@ -221,7 +213,18 @@ def main():
                 break
             else:
                 print('Entry not valid! Please enter Yes or No')
-                continue
+
+def main():
+    while True:
+        city, month, day = get_filters()
+        df = load_data(city, month, day)
+
+        time_stats(df)
+        station_stats(df)
+        trip_duration_stats(df)
+        user_stats(df)
+        raw_data(df)
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
                 break

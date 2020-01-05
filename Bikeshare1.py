@@ -194,7 +194,7 @@ def raw_data(df):
                and continues the prompts and displays until the user says 'no'"""
 
     while True:
-        raw_data = input('Would you like to see raw data? Enter yes or no?: ')
+        raw_data = input('Would you like to see first 5 rows raw data? Enter yes or no?: ')
         row_start = 0
         row_end = 5
         if raw_data.lower() == 'yes':

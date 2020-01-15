@@ -98,13 +98,12 @@ def time_stats(df):
     # TO DO: display the most common day of week
     popular_day_of_week = df['day_of_week'].mode()[0]
     count = df['day_of_week'].value_counts()[0]
-    print('Most Popular Day of The Week:', popular_day_of_week, 'Count:', count)
+    print('The Most Popular Day of the Week is {}, with a Count of {}'.format(popular_day_of_week, count))
 
     # TO DO: display the most common start hour
     popular_hour = df['hour'].mode()[0]
     pop_count = df['hour'].value_counts()[0]
-    print('Most Popular Start Hour:', popular_hour, 'Count:', pop_count)
-
+    print('The Most Popular Start Hour is {}, with a Count of {}'.format(popular_hour, pop_count))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -189,9 +188,8 @@ def user_stats(df):
     print('-'*40)
 
 def raw_data(df):
-
-            """Prompts user to if they want to see raw data, displays data if the answer is 'yes',
-               and continues the prompts and displays until the user says 'no'"""
+    """Prompts user to if they want to see raw data, displays data if the answer is 'yes',
+    and continues the prompts and displays until the user says 'no'"""
 
     while True:
         raw_data = input('Would you like to see first 5 rows raw data? Enter yes or no?: ')

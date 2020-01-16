@@ -143,7 +143,6 @@ def trip_duration_stats(df):
     total_travel_time = df['Trip Duration'].sum()
     print('Total Travel Time:', total_travel_time)
 
-
     # TO DO: display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
     print('Mean Travel Time:', mean_travel_time)
@@ -174,13 +173,13 @@ def user_stats(df):
     # TO DO: Display earliest, most recent, and most common year of birth
     try:
         earliest_birth = df['Birth Year'].min()
-        print('Earliest Birth Year:', earliest_birth)
+        print('The Earliest Birth Year is {}'.format(earliest_birth))
 
         latest_birth = df['Birth Year'].max()
-        print('Latest Birth Year:', latest_birth)
+        print('The Latest Birth Year is {}'.format(latest_birth))
 
         most_common_birth_year = df['Birth Year'].mode()[0]
-        print('Most Common Birth Year:', most_common_birth_year)
+        print('The Most Common Birth Year is {}'.format(most_common_birth_year))
     except:
         print('No Entries for Birth Year')
 
